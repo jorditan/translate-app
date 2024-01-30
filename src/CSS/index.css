@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+     font-family: 'Gabarito';
+     src: url('../assets/Fonts/Gabarito-VariableFont_wght.ttf');
+}
+
+* {
+     font-family: 'Gabarito';
+     box-sizing: border-box;
+}
+
+main {
+     background: linear-gradient(rgba(5,7,12,0.404), rgba(5, 7, 12, 0.404)),
+     url('https://www.xtrafondos.com/descargar.php?id=3334&resolucion=2560x1600');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
