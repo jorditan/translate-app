@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 
 function TextArea() {
 
-     const [initialText, setInitialText] = useState('Hello, how are you?');
+     const initialText = "Hello, how are you?"
      const [caracteres, setCaracteres] = useState(initialText.length);
 
      const agregarCaraceteres = (e: ChangeEvent<HTMLTextAreaElement>): void => {
