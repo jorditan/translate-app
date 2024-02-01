@@ -5,14 +5,11 @@ function TextArea() {
      const [initialText, setInitialText] = useState('Hello, how are you?');
      const [caracteres, setCaracteres] = useState(initialText.length);
 
-     const agregarCaraceteres = (e: ChangeEvent<HTMLInputElement>) : void => {
+     const agregarCaraceteres = (e: ChangeEvent<HTMLTextAreaElement>): void => {
           const inputValue = e.target.value.length;
           setCaracteres(inputValue)
      }
 
-     if(caracteres >= 500) {
-          
-     }
 
      return (
           <>
