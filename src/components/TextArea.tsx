@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 function TextArea() {
 
-     const [caracteres, setCaracteres] = useState(0);
+     const [initialText, setInitialText] = useState('Hello, how are you?');
+     const [caracteres, setCaracteres] = useState(initialText.length);
 
-     const agregarCaraceteres = (e) => {
+     const agregarCaraceteres = (e: ChangeEvent<HTMLInputElement>) : void => {
           const inputValue = e.target.value.length;
           setCaracteres(inputValue)
      }
@@ -16,7 +17,7 @@ function TextArea() {
      return (
           <>
                <textarea onChange={agregarCaraceteres} name="" id="" placeholder="" className="w-full h-[8em] bg-transparent border-none text-[#fafafa] text-sm focus:outline-none resize-none">
-                    Hello, How are you?
+                    {initialText}
                </textarea>
 
                <p className="text-[#9693938a] text-xs">{caracteres}/500</p>
