@@ -4,13 +4,14 @@ import TextArea from "./TextArea";
 import ButtonSecondary from "./ButtonSecondary";
 
 function Translate() {
+
      return (
           <>
                <div className="w-full h-[18em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
                     <div className="flex items-center gap-2 sm:gap-5 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
                          <h2 className="text-xs text-[#dad9d9]">Selecciona un lenguaje</h2>
-                         <Button texto={'Frances'} value={'Fr'} />
-                         <Button texto={'Inglés'} value={'Es'}/>
+                         <Button texto={'Frances'} value={'fr'} />
+                         <Button texto={'Inglés'} value={'es'} />
                          <ButtonSelection />
                     </div>
 
@@ -19,7 +20,12 @@ function Translate() {
                     </form>
 
                     <div className="contenedorEnvio flex justify-end">
-                         <ButtonSecondary texto={'Traducir'} />
+                         <ButtonSecondary texto={'Traducir'} imagen={<svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-message-language" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fafafa" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+                              <path d="M10 14v-4a2 2 0 1 1 4 0v4" />
+                              <path d="M14 12h-4" />
+                         </svg>} />
                     </div>
                </div>
           </>
