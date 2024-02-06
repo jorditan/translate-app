@@ -3,7 +3,6 @@ import './CSS/index.css';
 import Translate from './components/Translate';
 import Resultado from './components/Resultado';
 
-
 function App() {
   return (
     <>
