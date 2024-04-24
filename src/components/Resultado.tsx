@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
 import { useCurrentLanguage } from "../store/languageStore";
 function Resultado() {
      const obtenerIdioma = useCurrentLanguage(state => state.obtenerIdioma);
-     
+
      const idiomaSeleccionado = obtenerIdioma();
+     const { cambiar } = useCurrentLanguage();
 
      return (
           <>
                <>
-                    <div className="w-full h-[18em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
+                    <div className="w-full sm:h-[18em] h-[22em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
                          <div className="flex items-center gap-2 sm:gap-5 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
                               <h2 className="text-xs text-[#dad9d9] p-2">Traducir al {idiomaSeleccionado}</h2>
                          </div>
 
-                         <div className="contenedorResultado h-[10.5em]">
+                         <div className="contenedorResultado h-[13em] sm:h-[10.5em]">
                               <p></p>
                          </div>
 

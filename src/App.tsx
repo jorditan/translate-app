@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <Header />
-      <main className='sm:py-28 sm:px-20 px-9 py-10 min-h-[100vh]'>
-        <section className='py-10 flex flex-col md:flex-row md:gap-20 gap-10'>
+      <main className='sm:py-28 sm:px-20 px-9 py-20 min-h-[100vh]'>
+        <section className='py-10 flex flex-col lg:flex-row md:gap-20 gap-10 lg:gap-50 sm:flex-col'>
           <Translate />
           <Resultado />
         </section>

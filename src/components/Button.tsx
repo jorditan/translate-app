@@ -13,7 +13,7 @@ function Button({ texto, value, cambiar }: Props) {
                          <div className="rounded-md bg-transparent hover:bg-[#7a7a7aa1] p-2 text-[#fafafa] transition-all hover:shadow peer-checked:text-[#7a7a7aa1] peer-checked:bg-[#7a7a7aa1] justify-center items-center">
                               <div className="flex flex-col gap-1">
                                    <div className="flex items-center justify-between">
-                                        <p className="text-sm text-[#fafafa]">{texto}</p>
+                                        <p className=" text-xs sm:text-sm text-[#fafafa]">{texto}</p>
                                    </div>
                               </div>
                          </div>

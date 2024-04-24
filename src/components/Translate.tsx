@@ -6,27 +6,31 @@ import { useEffect } from "react";
 
 
 function Translate() {
-
      const { language, idioma } = useCurrentLanguage((state) => ({
           language: state.language,
           idioma: state.idioma
      }))
 
+     const url = 'https://es.libretranslate.com/translate';
+
      const { cambiar } = useCurrentLanguage();
 
      useEffect(() => {
+          fetch(url)
+               .then((response) => response.json())
+               .then((data) => console.log(data));
           console.log(language)
           console.log(idioma)
      }, [language, idioma])
 
      return (
           <>
-               <div className="w-full h-[18em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
+               <div className="w-full sm:h-[18em] h-[22em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
                     <div className="flex items-center gap-2 sm:gap-5 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
                          <h2 className="text-xs text-[#dad9d9]">Selecciona un lenguaje</h2>
-                         <Button texto={'French'} value={'fr'} cambiar={cambiar} />
-                         <Button texto={'English'} value={'es'} cambiar={cambiar} />
-                         <Button texto={'Português'} value={'pr'} cambiar={cambiar} />
+                         <Button texto={'Francés'} value={'fr'} cambiar={cambiar} />
+                         <Button texto={'Inglés'} value={'es'} cambiar={cambiar} />
+                         <Button texto={'Portugués'} value={'pr'} cambiar={cambiar} />
                     </div>
 
 
@@ -34,7 +38,7 @@ function Translate() {
                          <TextArea />
                     </form>
 
-                    <div className="contenedorEnvio flex justify-end">
+                    <div className="contenedorEnvio flex justify-end ">
                          <p></p>
                          <ButtonSecondary texto={'Traducir'} imagen={<svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-message-language" width="22" height="22" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#fafafa" fill="none" strokeLinecap="round" strokeLinejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
