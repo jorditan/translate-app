@@ -14,6 +14,10 @@ export const useCurrentLanguage = create<CurrentState> ((set, get) => ({
         const idiomaSeleccionado = get().idioma
         return idiomaSeleccionado
     },
+    obtenerLenguaje : () =>  {
+        const lenguajeSeleccionado = get().language
+        return lenguajeSeleccionado;
+    },
     cambiar: (value: string, idioma:string) => set(state => ({
         language: value,
         idioma: idioma

@@ -11,14 +11,10 @@ function Translate() {
           idioma: state.idioma
      }))
 
-     const url = 'https://es.libretranslate.com/translate';
 
      const { cambiar } = useCurrentLanguage();
 
      useEffect(() => {
-          fetch(url)
-               .then((response) => response.json())
-               .then((data) => console.log(data));
           console.log(language)
           console.log(idioma)
      }, [language, idioma])
@@ -29,8 +25,9 @@ function Translate() {
                     <div className="flex items-center gap-2 sm:gap-5 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
                          <h2 className="text-xs text-[#dad9d9]">Selecciona un lenguaje</h2>
                          <Button texto={'Francés'} value={'fr'} cambiar={cambiar} />
-                         <Button texto={'Inglés'} value={'es'} cambiar={cambiar} />
-                         <Button texto={'Portugués'} value={'pr'} cambiar={cambiar} />
+                         <Button texto={'Inglés'} value={'en'} cambiar={cambiar} />
+                         <Button texto={'Alemán'} value={'de'} cambiar={cambiar} />
+                         <Button texto={'Catalán'} value={'ca'} cambiar={cambiar} />
                     </div>
 
 
