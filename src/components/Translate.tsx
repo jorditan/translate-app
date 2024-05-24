@@ -3,16 +3,20 @@ import TextArea from "./TextArea";
 import ButtonSecondary from "./ButtonSecondary";
 import { useCurrentLanguage } from "../store/languageStore";
 import { useEffect } from "react";
-
+import { shallow } from "zustand/shallow";
+// import { useState } from "react";
 
 function Translate() {
+
      const { language, idioma } = useCurrentLanguage((state) => ({
           language: state.language,
-          idioma: state.idioma
-     }))
+          idioma: state.idioma,
+     }), shallow)
 
 
      const { cambiar } = useCurrentLanguage();
+     const { traducir } = useCurrentLanguage();
+
 
      useEffect(() => {
           console.log(language)
@@ -36,7 +40,7 @@ function Translate() {
                     </form>
 
                     <div className="contenedorEnvio flex justify-end ">
-                         <p></p>
+
                          <ButtonSecondary texto={'Traducir'} imagen={<svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-message-language" width="22" height="22" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#fafafa" fill="none" strokeLinecap="round" strokeLinejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                               <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />

@@ -4,23 +4,27 @@ function Resultado() {
 
      const obtenerIdioma = useCurrentLanguage(state => state.obtenerIdioma);
      const obtenerLenguaje =  useCurrentLanguage(state => state.obtenerLenguaje);
+     const obtenerTexto = useCurrentLanguage(state => state.obtenerTexto);
+     
      const [respuesta, setRespuesta] = useState(null);
 
      const idiomaSeleccionado = obtenerIdioma();
      const lenguajeSeleccionado = obtenerLenguaje();
+     const textoEscrito = obtenerTexto();
 
-     const url = `https://api.mymemory.translated.net/get?q=${idiomaSeleccionado}!&langpair=es|${lenguajeSeleccionado}`;
+     const url = `https://api.mymemory.translated.net/get?q=${textoEscrito}!&langpair=es|${lenguajeSeleccionado}`;
 
      const { cambiar } = useCurrentLanguage();
 
      useEffect(() =>  {
           fetch(url)
           .then((response) => response.json())
-          .then((data) => setRespuesta(data.responseData.translatedText))
+          .then((data) => console.log((data.responseData.translatedText)))
           .catch(error => {
                console.log(error)
           })
           console.log(lenguajeSeleccionado);
+
      }, [respuesta, url, lenguajeSeleccionado])
 
      return (
