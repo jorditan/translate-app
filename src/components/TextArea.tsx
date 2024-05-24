@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useCurrentLanguage } from "../store/languageStore";
 import { shallow } from "zustand/shallow";
 
@@ -11,7 +11,7 @@ function TextArea() {
 
      const { recibirTexto } = useCurrentLanguage();
 
-     const [mensaje, setMensaje] = useState<string>("")
+     const [mensaje, setMensaje] = useState<string>(texto)
 
      const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
           setMensaje(event.target.value);

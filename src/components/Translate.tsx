@@ -2,26 +2,9 @@ import Button from "./Button";
 import TextArea from "./TextArea";
 import ButtonSecondary from "./ButtonSecondary";
 import { useCurrentLanguage } from "../store/languageStore";
-import { useEffect } from "react";
-import { shallow } from "zustand/shallow";
-// import { useState } from "react";
 
 function Translate() {
-
-     const { language, idioma } = useCurrentLanguage((state) => ({
-          language: state.language,
-          idioma: state.idioma,
-     }), shallow)
-
-
      const { cambiar } = useCurrentLanguage();
-     const { traducir } = useCurrentLanguage();
-
-
-     useEffect(() => {
-          console.log(language)
-          console.log(idioma)
-     }, [language, idioma])
 
      return (
           <>

@@ -1,5 +1,6 @@
 import { useCurrentLanguage } from "../store/languageStore";
 import { useState, useEffect } from "react";
+
 function Resultado() {
 
      const obtenerIdioma = useCurrentLanguage(state => state.obtenerIdioma);
@@ -19,12 +20,11 @@ function Resultado() {
      useEffect(() =>  {
           fetch(url)
           .then((response) => response.json())
-          .then((data) => console.log((data.responseData.translatedText)))
+          .then((data) => setRespuesta((data.responseData.translatedText)))
+
           .catch(error => {
                console.log(error)
           })
-          console.log(lenguajeSeleccionado);
-
      }, [respuesta, url, lenguajeSeleccionado])
 
      return (
