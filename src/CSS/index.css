@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "keep-react/css";
+
 
 @font-face {
      font-family: 'Gabarito';
@@ -14,9 +16,14 @@
 
 main {
      background: linear-gradient(rgba(5,7,12,0.404), rgba(5, 7, 12, 0.404)),
-     url('https://www.xtrafondos.com/descargar.php?id=3334&resolucion=2560x1600');
+     url('https://wallpapers-clan.com/wp-content/uploads/2023/10/space-portal-galaxy-desktop-wallpaper-preview.jpg');
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
 }
 
+.mostrar {
+     opacity: 100;
+     visibility: visible;
+     transition: opacity 1s all ease-in;
+}

@@ -1,31 +1,27 @@
+import { useState } from "react";
 import { useCurrentLanguage } from "../store/languageStore";
-import { useState, useEffect } from "react";
+import AlertKeep from "./AlertKeep";
+
 
 function Resultado() {
 
-     const obtenerIdioma = useCurrentLanguage(state => state.obtenerIdioma);
-     const obtenerLenguaje =  useCurrentLanguage(state => state.obtenerLenguaje);
-     const obtenerTexto = useCurrentLanguage(state => state.obtenerTexto);
-     
-     const [respuesta, setRespuesta] = useState(null);
-
-     const idiomaSeleccionado = obtenerIdioma();
-     const lenguajeSeleccionado = obtenerLenguaje();
-     const textoEscrito = obtenerTexto();
-
-     const url = `https://api.mymemory.translated.net/get?q=${textoEscrito}!&langpair=es|${lenguajeSeleccionado}`;
-
      const { cambiar } = useCurrentLanguage();
 
-     useEffect(() =>  {
-          fetch(url)
-          .then((response) => response.json())
-          .then((data) => setRespuesta((data.responseData.translatedText)))
+     const [copiado, setCopiado] = useState(false);
 
-          .catch(error => {
-               console.log(error)
-          })
-     }, [respuesta, url, lenguajeSeleccionado])
+     const obtenerIdioma = useCurrentLanguage(state => state.obtenerIdioma);
+     const obtenerRespuesta = useCurrentLanguage(state => state.obtenerRespuesta);
+
+     const respuesta = obtenerRespuesta();
+     const idiomaSeleccionado = obtenerIdioma();
+
+     const copiarAlPortapapeles = (respuesta: string) => {
+          navigator.clipboard.writeText(respuesta);
+          setCopiado(true)
+          setTimeout(() => {
+               setCopiado(false)
+          }, 3000);
+     }
 
      return (
           <>
@@ -36,11 +32,11 @@ function Resultado() {
                          </div>
 
                          <div className="contenedorResultado h-[13em] sm:h-[10.5em]">
-                              <p className="py-2.5 text-[#fafafa]">{respuesta ? respuesta : "Cargando..."}</p>
+                              <p className="py-2.5 text-[#fafafa]">{respuesta}</p>
                          </div>
 
                          <div className="contenedorBotones flex justify-end">
-                              <div className="text-[#fafafa] bg-transparent border border-[#a6a6a6a1] flex text-xs transition duration-75 rounded-lg hover:bg-[#a6a6a6a1] p-2 justify-center items-center gap-1">
+                              <div onClick={() => copiarAlPortapapeles(respuesta)} className={respuesta == "" ? "text-[#fafafa] cursor-not-allowed	opacity-50 bg-[#cbcbcba1] border border-[#a6a6a6a1] flex text-xs rounded-lg p-2 justify-center items-center gap-1" : "text-[#fafafa] bg-transparent border border-[#a6a6a6a1] flex text-xs transition duration-75 rounded-lg hover:bg-[#a6a6a6a1] p-2 justify-center items-center gap-1"}>
                                    <svg xmlns="https//www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-clipboard" width="22" height="22" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#fafafa" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
@@ -48,6 +44,8 @@ function Resultado() {
                                    </svg>
                               </div>
                          </div>
+
+                         <AlertKeep className={copiado ? "mostrar" : ""} />
                     </div>
                </>
           </>

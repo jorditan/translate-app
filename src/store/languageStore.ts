@@ -4,19 +4,21 @@ interface CurrentState {
     language: string;
     idioma: string;
     texto: string;
-    textoTraducido: string,
+    respuesta: string;
     recibirTexto: (value: string) => void,
+    recibirRespuesta: (value:string) => void,
     cambiar: (value: string, idioma: string) => void;
     obtenerIdioma: () => string;
-    obtenerTexto: () => void;
+    obtenerTexto: () => string;
     obtenerLenguaje: () => void,
+    obtenerRespuesta: () => string,
 }
 
 export const useCurrentLanguage = createWithEqualityFn<CurrentState> ((set, get) => ({
+    respuesta: '',
     texto: '',
     language: '',
     idioma: '',
-    textoTraducido: '',
     obtenerIdioma : () =>  {
         const idiomaSeleccionado = get().idioma
         return idiomaSeleccionado
@@ -29,11 +31,18 @@ export const useCurrentLanguage = createWithEqualityFn<CurrentState> ((set, get)
         const textoEscrito = get().texto
         return textoEscrito
     },
-    cambiar: (language:string, idioma:string) => set(({
+    obtenerRespuesta : () => {
+        const respuesta = get().respuesta
+        return respuesta
+    },
+    cambiar: (language:string, idioma:string,) => set(({
         idioma: idioma,
         language: language,
     })),
     recibirTexto: (mensaje: string) => set(({
         texto: mensaje,
-    }))
+    })),
+    recibirRespuesta: (mensaje: string) => set(({
+        respuesta: mensaje,
+    })),
 }))
