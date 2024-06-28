@@ -1,19 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCurrentLanguage } from "../store/languageStore";
 import AlertKeep from "./AlertKeep";
 
 
 function Resultado() {
-
-     const { cambiar } = useCurrentLanguage();
-
      const [copiado, setCopiado] = useState(false);
-
      const obtenerIdioma = useCurrentLanguage(state => state.obtenerIdioma);
      const obtenerRespuesta = useCurrentLanguage(state => state.obtenerRespuesta);
-
+     
      const respuesta = obtenerRespuesta();
      const idiomaSeleccionado = obtenerIdioma();
+
 
      const copiarAlPortapapeles = (respuesta: string) => {
           navigator.clipboard.writeText(respuesta);

@@ -10,7 +10,7 @@ interface CurrentState {
     cambiar: (value: string, idioma: string) => void;
     obtenerIdioma: () => string;
     obtenerTexto: () => string;
-    obtenerLenguaje: () => void,
+    obtenerLenguaje: () => string,
     obtenerRespuesta: () => string,
 }
 

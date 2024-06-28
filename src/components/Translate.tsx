@@ -7,21 +7,20 @@ function Translate() {
      const { cambiar } = useCurrentLanguage();
 
      const obtenerTexto = useCurrentLanguage(state => state.obtenerTexto);
-     const obtenerLenguaje =  useCurrentLanguage(state => state.obtenerLenguaje);
+     const obtenerLenguaje = useCurrentLanguage(state => state.obtenerLenguaje);
      const recibirRespuesta = useCurrentLanguage(state => state.recibirRespuesta);
 
      const lenguajeSeleccionado = obtenerLenguaje();
      const textoEscrito = obtenerTexto();
-     
-     const traducir = () =>  {
+
+     const traducir = () => {
           const url = `https://api.mymemory.translated.net/get?q=${textoEscrito}!&langpair=es|${lenguajeSeleccionado}`;
-          console.log(lenguajeSeleccionado);
           fetch(url)
-          .then((response) => response.json())
-          .then((data) => recibirRespuesta((data.responseData.translatedText)))
-          .catch(error => {
-               console.log(error)
-          })
+               .then((response) => response.json())
+               .then((data) => recibirRespuesta((data.responseData.translatedText)))
+               .catch(error => {
+                    console.log(error)
+               })
      }
 
      return (
@@ -41,7 +40,6 @@ function Translate() {
                     </form>
 
                     <div className="contenedorEnvio flex justify-end ">
-
                          <ButtonSecondary onClick={traducir} texto={'Traducir'} imagen={<svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-message-language" width="22" height="22" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#fafafa" fill="none" strokeLinecap="round" strokeLinejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                               <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
