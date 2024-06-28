@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCurrentLanguage } from "../store/languageStore";
 import AlertKeep from "./AlertKeep";
 
 
 function Resultado() {
      const [copiado, setCopiado] = useState(false);
-     const obtenerIdioma = useCurrentLanguage(state => state.obtenerIdioma);
      const obtenerRespuesta = useCurrentLanguage(state => state.obtenerRespuesta);
-     
-     const respuesta = obtenerRespuesta();
-     const idiomaSeleccionado = obtenerIdioma();
 
+     const respuesta = obtenerRespuesta();
+     const { idioma } = useCurrentLanguage();
 
      const copiarAlPortapapeles = (respuesta: string) => {
           navigator.clipboard.writeText(respuesta);
@@ -25,7 +23,7 @@ function Resultado() {
                <>
                     <div className="w-full sm:h-[18em] h-[22em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
                          <div className="flex items-center gap-2 sm:gap-5 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
-                              <h2 className="text-xs text-[#dad9d9] py-2">Traducir al {idiomaSeleccionado}</h2>
+                              <h2 className="text-xs text-[#dad9d9] py-2">Traducir al {idioma}</h2>
                          </div>
 
                          <div className="contenedorResultado h-[13em] sm:h-[10.5em]">
