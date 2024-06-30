@@ -1,6 +1,7 @@
 import Button from "./Button";
 import TextArea from "./TextArea";
 import ButtonSecondary from "./ButtonSecondary";
+import DropdownComponent from "./Dropdown";
 import { useCurrentLanguage } from "../store/languageStore";
 
 function Translate() {
@@ -28,10 +29,11 @@ function Translate() {
                <div className="w-full sm:h-[18em] h-[22em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
                     <div className="flex items-center gap-2 sm:gap-5 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
                          <h2 className="text-xs text-[#dad9d9]">Selecciona un lenguaje</h2>
-                         <Button texto={'Francés'} value={'fr'} cambiar={cambiar} />
-                         <Button texto={'Inglés'} value={'en'} cambiar={cambiar} />
-                         <Button texto={'Alemán'} value={'de'} cambiar={cambiar} />
-                         <Button texto={'Catalán'} value={'ca'} cambiar={cambiar} />
+                         <Button styles={'hidden'} texto={'Francés'} value={'fr'} cambiar={cambiar} />
+                         <Button styles={'hidden'} texto={'Inglés'} value={'en'} cambiar={cambiar} />
+                         <Button styles={'hidden'} texto={'Alemán'} value={'de'} cambiar={cambiar} />
+                         <Button styles={'hidden'} texto={'Catalán'} value={'ca'} cambiar={cambiar} />
+                         <DropdownComponent/>
                     </div>
 
 
