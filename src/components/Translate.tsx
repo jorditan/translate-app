@@ -27,13 +27,15 @@ function Translate() {
      return (
           <>
                <div className="w-full sm:h-[18em] h-[22em] bg-[#232637d7] rounded-3xl  border-solid border-[.5px] border-[#8a8a8bd7] p-5" >
-                    <div className="flex items-center gap-2 sm:gap-5 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
+                    <div className="flex items-center gap-2 md:gap-4 border-[#8a8a8bd7] border-b-[1px] p-1 w-full">
                          <h2 className="text-xs text-[#dad9d9]">Selecciona un lenguaje</h2>
-                         <Button styles={'hidden'} texto={'Francés'} value={'fr'} cambiar={cambiar} />
-                         <Button styles={'hidden'} texto={'Inglés'} value={'en'} cambiar={cambiar} />
-                         <Button styles={'hidden'} texto={'Alemán'} value={'de'} cambiar={cambiar} />
-                         <Button styles={'hidden'} texto={'Catalán'} value={'ca'} cambiar={cambiar} />
-                         <DropdownComponent/>
+                         <div className="gap-5 hidden sm:flex">
+                              <Button styles={'hidden'} texto={'Francés'} value={'fr'} cambiar={cambiar} />
+                              <Button styles={'hidden'} texto={'Inglés'} value={'en'} cambiar={cambiar} />
+                              <Button styles={'hidden'} texto={'Alemán'} value={'de'} cambiar={cambiar} />
+                              <Button styles={'hidden'} texto={'Catalán'} value={'ca'} cambiar={cambiar} />
+                         </div>
+                         <DropdownComponent />
                     </div>
 
 
@@ -47,6 +49,7 @@ function Translate() {
                               <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
                               <path d="M10 14v-4a2 2 0 1 1 4 0v4" />
                               <path d="M14 12h-4" />
+
                          </svg>} />
                     </div>
                </div>

@@ -7,13 +7,9 @@ function App() {
   return (
     <>
       <Header />
-      <main className='min-h-[100vh]'>
-        <section className='py-20 justify-center flex h-[100vh] lg:flex-column md:gap-20 gap-10 lg:gap-50 sm:flex-col'>
-          <div className='py-10 px-10 flex-row flex md:gap-20 gap-10 lg:gap-50 '>
+      <main className='md:h-[80vh] h-[90vh] px-5 lg:px-10 items-top py-5 justify-center lg:flex-row md:gap-20 lg:gap-50 sm:flex-col gap-10 lg:gap-50 flex flex-col'>
             <Translate />
             <Resultado />
-          </div>
-        </section>
       </main>
     </>
   )

@@ -20,6 +20,7 @@ function Button({ texto, value, cambiar, styles}: Props) {
                          </div>
                     </label>
                </button>
+          
           </>
      );
 }

@@ -6,7 +6,7 @@ interface Props {
 
 function AlertKeep({className}: Props) {
      return (
-          <Alert color="secondary" className={`absolute left-1/2 bottom-20 transform -translate-x-1/2 ease-in duration-300 opacity-0 invisible ${className}`}>
+          <Alert color="secondary" className={`inset-x-0 m-auto fixed left-0 bottom-10 transform-translate-x-1/2 ease-in duration-300 w-[340px] opacity-0 invisible ${className}`}>
                <Alert.Container>
                     <Alert.Icon />
                     <Alert.Title>Respuesta copiada al portapapeles</Alert.Title>

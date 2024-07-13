@@ -15,7 +15,7 @@
      box-sizing: border-box;
 }
 
-main {
+body {
      background: linear-gradient(rgba(5,7,12,0.404), rgba(5, 7, 12, 0.404)),
      url('https://wallpapers-clan.com/wp-content/uploads/2023/10/space-portal-galaxy-desktop-wallpaper-preview.jpg');
      background-position: center;
