@@ -31,7 +31,7 @@ function Resultado() {
                          </div>
 
                          <div className="contenedorBotones flex justify-end">
-                              <div onClick={() => copiarAlPortapapeles(respuesta)} className={respuesta == "" ? "text-[#fafafa] cursor-not-allowed	opacity-50 bg-[#cbcbcba1] border border-[#a6a6a6a1] flex text-xs rounded-lg p-2 justify-center items-center gap-1" : "text-[#fafafa] bg-transparent border border-[#a6a6a6a1] flex text-xs transition duration-75 rounded-lg hover:bg-[#a6a6a6a1] p-2 justify-center items-center gap-1"}>
+                              <div onClick={() => respuesta !== "" && copiarAlPortapapeles(respuesta)} className={respuesta == "" ? "text-[#fafafa] cursor-not-allowed	opacity-50 bg-[#cbcbcba1] border border-[#a6a6a6a1] flex text-xs rounded-lg p-2 justify-center items-center gap-1" : "text-[#fafafa] bg-transparent border border-[#a6a6a6a1] flex text-xs transition duration-75 rounded-lg hover:bg-[#a6a6a6a1] p-2 justify-center items-center gap-1"}>
                                    <svg xmlns="https//www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-clipboard" width="22" height="22" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#fafafa" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
